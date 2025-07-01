@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designity</title>
+    <link rel="stylesheet" href="Catalogo.css">
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+    </script>
+
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="name_logo">
+            <div class="logo_container">
+                <img class="logo" src="recurses/logo.png">
+            </div>
+            <h1>DESIGNITY</h1>
+        </div>
+        <nav class="navbarr" id="navbarr">
+            <!-- Menú hamburguesa -->
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Inicio</a></li>
+                <li> <a href="Serivicios.html">Paquetes y servicios</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="QF.html">Preguntas frecuentes</a></li>
+                <li><a href="catalogo.html">Catalogo</a></li>
+
+                <li>
+                    <a href=" https://wa.me/5219811867267">
+                        <i class='bxl  bx-whatsapp'></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61572433484614">
+                        <i class='bxl  bx-facebook-circle'></i>
+                    </a>
+                    <a href="mailto:designity.mx@gmail.com">
+                        <i class='bxl  bx-gmail'  ></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+    </header>
+
+
+    <main>
+        <div class="pdf_viewer" id="pdf-container">
+            <!--<iframe src="tucatalogo.pdf"></iframe>-->
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="footbox">
+            <h2>¿Por qué debes contratarnos?</h2> <br>
+            <p>sabemos lo importante que es tu marca para ti y tus clientes,
+                por ello, nos encargaremos de darte un diseño unico y original. Todo a un execelente precio
+            </p>
+        </div>
+
+        <div class="footbox">
+            <h2>Portafolio</h2> <br>
+            <p>Si buscas un logotipo que destaque y hable por tu negocio, estás en el lugar correcto.
+                Explora mi portafolio y descubre cómo puedo ayudarte a dar vida a tu visión.
+                ¡Hablemos y llevemos tu marca al siguiente nivel!
+            </p>
+            <br>
+            <a href="portafolio.html">
+                <button>VER PORTAFOLIO</button>
+            </a>
+
+        </div>
+
+        <div class="footbox">
+            <h2>Mucho mas que un logo</h2> <br>
+            <p>
+                Ayudamos a que tu marca realmente conecte con tu audiencia,
+                no creamos logos, creamos experiencias.
+            </p> <br>
+            <a href=" https://wa.me/5219811867267">
+                <button>¡Cotiza Ahora!</button>
+            </a>
+
+        </div>
+
+
+        <div>
+            <h2>Contactanos</h2>
+            <div class="contact">
+                <a href=" https://wa.me/5219811867267">
+                    <i class='bxl  bx-whatsapp'></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61572433484614">
+                    <i class='bxl  bx-facebook-circle'></i>
+                </a>
+
+                <i class='bxl  bx-instagram'></i>
+            </div>
+        </div>
+
+
+
+    </footer>
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const menu = document.querySelector("nav ul");
+
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            menu.classList.toggle("show");
+        });
+    </script>
+
+    <script>
+        const url = 'Catalogo.pdf'; //nombre del pdf
+        const container = document.getElementById('pdf-container');
+
+        // Carga el documento
+        const loadingTask = pdfjsLib.getDocument(url);
+        loadingTask.promise.then(pdf => {
+            const totalPages = pdf.numPages;
+
+            // Cargar todas las páginas
+            for (let pageNum = 1; pageNum <= totalPages; pageNum++) {
+                pdf.getPage(pageNum).then(page => {
+                    const scale = window.innerWidth < 768 ? 0.9 : 1.1;
+                    const viewport = page.getViewport({ scale });
+
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+
+
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+
+                    page.render(renderContext).promise.then(() => {
+                        container.appendChild(canvas);
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,385 @@
+* {
+
+    a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+
+
+.name_logo {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 35px;
+    left: 30px;
+}
+
+
+
+
+.logo_container {
+    border-radius: 45px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    left: 20px;
+    border-radius: 45px;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 140px;
+    background-color: rgb(0, 0, 0);
+    color: #ffc107;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    gap: 0px;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    z-index: 100;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+nav ul {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+nav a:hover {
+    border-bottom: 2px solid rgb(247, 194, 48);
+    /* Subrayado dorado */
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 1);
+    /* fondo oscuro con transparencia */
+    box-shadow: rgba(0, 0, 0, 1);
+}
+
+.pdf_viewer {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    object-fit: fill;
+    padding-top: 150px;
+}
+
+
+
+canvas {
+    width: 900px !important;
+    height: max-content !important;
+    display: flex;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    object-fit: fill;
+    
+    
+}
+
+h2 {
+    text-align: center;
+}
+
+/*footer*/
+footer {
+    display: flex;
+    width: 100%;
+    background-color: black;
+    color: azure;
+    gap: 90px;
+    justify-content: center;
+    text-align: center;
+}
+
+.footbox {
+    width: 250px;
+    height: 320px;
+
+    p {
+        text-align: justify;
+    }
+}
+
+footer button {
+    width: auto;
+    font-size: 19px;
+}
+
+footer .contact {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        font-size: 35px;
+
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: black;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        padding: 2px;
+        gap: 15px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .header {
+        h1 {
+            font-size: 25px;
+
+        }
+
+    }
+
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        left: 20px;
+        border-radius: 45px;
+    }
+
+
+
+    .contact-bar h2 {
+        font-size: 15px;
+    }
+
+    .pdf_viewer {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    canvas {
+        width: 800px !important;
+        height: 1090px !important;
+        max-width: 100%;
+        display: block;
+        margin: 20px auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        background: white;
+        border-radius: 5px;
+        object-fit: fill;
+        position: relative;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    footer .footbox {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    footer button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+
+}
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+    header{
+        height: fit-content;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        z-index: 100;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: black;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        padding: 2px;
+        gap: 15px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 18px;
+    }
+
+   .pdf_viewer {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    canvas {
+        width: 400px !important;
+        height: 590px !important;
+        max-width: 100%;
+        display: block;
+        margin: 20px auto;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        background: white;
+        border-radius: 5px;
+        object-fit: fill;
+        position: relative;
+    }
+
+    footer {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        background-color: black;
+        color: azure;
+        gap: 50px;
+        justify-content: center;
+        text-align: center;
+
+        .footbox {
+            padding-top: 10px;
+            width: 250px;
+            height: fit-content;
+
+            p {
+                text-align: justify;
+            }
+        }
+
+        button {
+            width: auto;
+            font-size: 19px;
+        }
+
+        .contact {
+            display: flex;
+            gap: 19px;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                font-size: 35px;
+
+            }
+        }
+    }
+}
