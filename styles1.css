@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     a {
         text-decoration: none;
@@ -147,13 +147,28 @@ nav.scrolled {
 }
 
 
-.eslogan {
+.eslogan{
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 30px;
+    font-size: 55px;
     height: 400px;
+    text-shadow: 0 0 20px#ff9e20b9;
+}
+.eslogan h2 {
+    overflow: hidden;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    width: 20px;
+    animation: typing1 1.5s steps(20) forwards;
+}
+@keyframes typing1 {
+    to {
+        width: 85%;
+        border-right: none;
+    }
+
 }
 
 
@@ -290,7 +305,18 @@ div .pricebox {
     height: 40px;
 }
 
-
+#buttonCTA {
+    background-color: rgb(255, 172, 17);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 9px;
+    height: 50px;
+    width: 90px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 /* cards servicios */
 .container_cards {
     display: flex;
@@ -363,6 +389,16 @@ background-color: #572121;
     width: 900px;
     gap: 15px;
     font-size: 25px;
+    
+    
+}
+.description1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    height:450px ;
+    
 }
 
 .carousel_container {
@@ -537,7 +573,7 @@ footer {
     .footbox {
         padding-top: 10px;
         width: 250px;
-        height: 250px;
+        height: auto;
 
         p {
             text-align: justify;
