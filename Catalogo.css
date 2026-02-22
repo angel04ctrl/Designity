@@ -153,6 +153,18 @@ h2 {
 }
 
 /*footer*/
+#buttonCTAFOT {
+    background-color: rgb(255, 172, 17);
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 9px;
+    height: 59px;
+    width: 150px;
+    font-size: 16px;
+    text-align: center; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 footer {
     display: flex;
     width: 100%;
@@ -161,31 +173,37 @@ footer {
     gap: 90px;
     justify-content: center;
     text-align: center;
-}
 
-.footbox {
-    width: 250px;
-    height: 320px;
+    .footbox {
+        padding-top: 10px;
+        width: 250px;
+        height: auto;
 
-    p {
-        text-align: justify;
+        p {
+            text-align: justify;
+        }
     }
-}
 
-footer button {
-    width: auto;
-    font-size: 19px;
-}
+    button {
+        width: auto;
+        font-size: 19px;
+    }
 
-footer .contact {
-    display: flex;
-    gap: 19px;
-    align-items: center;
-    justify-content: center;
+    .contact {
+        display: flex;
+        gap: 19px;
+        align-items: center;
+        justify-content: center;
 
-    i {
-        font-size: 35px;
+        i {
+            font-size: 35px;
 
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
     }
 }
 
